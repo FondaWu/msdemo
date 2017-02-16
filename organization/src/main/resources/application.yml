@@ -1,0 +1,6 @@
+server:
+  port: 8005
+
+management:
+  security:
+    enabled: false

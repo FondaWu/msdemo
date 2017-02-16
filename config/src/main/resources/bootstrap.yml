@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: config #1
+  profiles:
+    active: native #2 
+  rabbitmq:
+       host: localhost
+       port: 5672
+       username: guest
+       password: guest
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  instance:
+    non-secure-port: ${server.port:8003} #3
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value} #4
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8001}/eureka/,http://${eureka.host:localhost}:${eureka.port:8002}/eureka/ #5
+

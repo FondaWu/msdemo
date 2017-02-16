@@ -1,0 +1,6 @@
+server:
+  port: 8011
+
+management:
+  security:
+    enabled: false
